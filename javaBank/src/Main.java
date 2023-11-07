@@ -8,7 +8,7 @@ public class Main {
         bank.getAccountInfo();
         bank.deposit(500.00);
         bank.getAccountInfo();
-        bank.withdraw(500.00);
+        bank.withdraw(1500.00);
         bank.getAccountInfo();
 
         bank.init();
