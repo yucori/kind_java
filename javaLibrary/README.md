@@ -6,7 +6,7 @@
 2. javaLibrary 폴더 내부에 있는 Main 클래스를 실행한다.
 
 ## 업무흐름도
-
+![javaLibrary업무흐름도.png](javaLibrary%EC%97%85%EB%AC%B4%ED%9D%90%EB%A6%84%EB%8F%84.png)
 
 1. Book 객체 생성
     1. 책 제목, 저자, ISBN 값을 받아 Book 객체를 생성한다.
@@ -20,7 +20,7 @@
 ## 요구사항
 
 ## 테이블
-
+![javaLibraryTable.png](javaLibraryTable.png)
 
 ## 프로젝트 구조
 - Main 클래스
