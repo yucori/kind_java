@@ -37,10 +37,6 @@ public class Customer {
         }
     }
 
-    void placeOrder(int customerId, Order order){
-        orderHistory.add(order);
-    }
-
     void cancelOrder(Order order, int customerId){
         if (order.customerId != customerId) {
             System.out.println("주문 취소 권한이 없습니다.");
