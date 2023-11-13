@@ -1,23 +1,52 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
-    int id;
+    int customerId;
     String email;
     String name;
     String shippingAddress;
-    String orderHistory;
+    List<Order> orderHistory;
 
-    public Customer(int id, String email, String name, String shippingAddress){
-        this.id = id;
+    public Customer(int customerId, String email, String name, String shippingAddress){
+        this.customerId = customerId;
         this.email = email;
         this.name = name;
         this.shippingAddress = shippingAddress;
+        this.orderHistory = new ArrayList<Order>();
     }
 
-    void placeOrder(Order order){
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", shippingAddress='" + shippingAddress + '\'' +
+                ", orderHistory=" + orderHistory +
+                '}';
     }
 
-    void cancelOrder(Order order){
+    void listingOrders(List<Order> orders, int customerId){
+        for (Order o: orders) {
+            if (o.customerId == customerId) {
+                orderHistory.add(o);
+            }else{
+                System.out.println("주문 내역이 없습니다.");
+            }
+        }
+    }
 
+    void placeOrder(int customerId, Order order){
+        orderHistory.add(order);
+    }
+
+    void cancelOrder(Order order, int customerId){
+        if (order.customerId != customerId) {
+            System.out.println("주문 취소 권한이 없습니다.");
+            return;
+        }
+        orderHistory.remove(order);
     }
 
     void updateProfile(String name, String email, String shippingAddress){
